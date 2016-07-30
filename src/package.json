@@ -16,7 +16,6 @@
   "author": "paul.huang",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0",
-    "github": "^2.4.0"
+    "express": "^4.14.0"
   }
 }
