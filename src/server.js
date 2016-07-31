@@ -14,13 +14,6 @@ app.post('/payload', function(req, res) {
     res.send('post payload');
 });
 
-app.get('/payload', function(req, res) {
-    console.log('get payload');
-    pull();
-    res.send('get payload');
-});
-
-
 app.get('/pull', function(req, res) {
     console.log('pull');
     pull();
