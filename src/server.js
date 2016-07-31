@@ -10,19 +10,21 @@ app.get('/', function(req, res) {
 
 app.post('/payload', function(req, res) {
     console.log('payload');
+    pull();
     res.send('payload');
-
 });
 
 app.get('/pull', function(req, res) {
     console.log('pull');
+    pull();
+    res.send('payload');
+});
 
+function pull() {
     var cmd = 'pull';
     var projectPath = path.resolve('f:/gthub/fiona.link-mirror');
     git(cmd, projectPath);
-
-    res.send('payload');
-});
+}
 
 function git(cmd, projectPath) {
 
