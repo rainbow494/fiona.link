@@ -1,1 +1,0 @@
-git -C f:\github\fiona.link-mirror pull
