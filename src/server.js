@@ -24,7 +24,7 @@ app.get('/payload', function(req, res) {
 app.get('/pull', function(req, res) {
     console.log('pull');
     pull();
-    res.send('payload');
+    res.send('pull payload');
 });
 
 function pull() {
