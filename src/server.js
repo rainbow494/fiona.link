@@ -9,10 +9,17 @@ app.get('/', function(req, res) {
 });
 
 app.post('/payload', function(req, res) {
-    console.log('payload');
+    console.log('post payload');
     pull();
-    res.send('payload');
+    res.send('post payload');
 });
+
+app.post('/payload', function(req, res) {
+    console.log('get payload');
+    pull();
+    res.send('get payload');
+});
+
 
 app.get('/pull', function(req, res) {
     console.log('pull');
