@@ -29,7 +29,7 @@ app.get('/pull', function(req, res) {
 
 function pull() {
     var cmd = 'pull';
-    var projectPath = path.resolve('f:/gthub/fiona.link-mirror');
+    var projectPath = path.resolve('f:/github/fiona.link-mirror');
     git(cmd, projectPath);
 }
 
@@ -57,16 +57,5 @@ function execCmd(cmd, projectPath) {
         console.log('closing code: ' + code);
     });
 }
-
-
-// app.get('/payload', function(req, res) {
-//     console.log('payload');
-//     res.send('payload');
-// });
-
-// app.put('/payload', function(req, res) {
-//     console.log('payload');
-//     res.send('payload');
-// });
 
 app.listen(4041);
