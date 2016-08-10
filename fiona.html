@@ -23,7 +23,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/fiona.html">梦旅行 - 爱养花白日梦想家的自说自话</a>
+                <a class="navbar-brand" href="/fiona.html"><!--ko text: obTitle--><!--/ko--> - <!--ko text: obDescription--><!--/ko--></a>
             </div>
         </div>
     </nav>
@@ -61,25 +61,32 @@
 
     <script>
         var myViewModel = {
-            obSummary: ko.observableArray([])
+            obSummary: ko.observableArray([]),
+            obTitle: ko.observable(),
+            obDescription: ko.observable()
         };
         ko.applyBindings(myViewModel);
 
         var init = function() {
+            initBase();
             initSummary();
         }
 
+        function initBase() {
+            myViewModel.obTitle(title);
+            myViewModel.obDescription(description);
+        }
         function initSummary() {
             articles = articles.map(function(article){
                 article.arch = "#" + article.title;
                 return article;
             })
-            myViewModel.obSummary(articles);
-            
+            myViewModel.obSummary(articles);            
         }
 
-        var articles = [
-        
+        var title = "梦旅行";
+        var description = "爱养花白日梦想家的自说自话";
+        var articles = [        
             {
                 title: "布鲁塞尔——2无处不在的街头艺术",
                 date: "2016年7月25日22:38",
@@ -109,7 +116,6 @@
                 url: "http://mp.weixin.qq.com/s?__biz=MzI5NzE3NTM4MQ==&mid=2649628168&idx=1&sn=912e2e733c8df6ade88ccc78d8224599&scene=4"
             }
         ]
-
         init();
     </script>
 </body>
